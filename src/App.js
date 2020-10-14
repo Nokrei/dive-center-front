@@ -5,7 +5,7 @@ import AppContext from "./AppContext";
 import LayoutRoute from "./LayoutRoute";
 import MainScreen from "./MainScreen";
 import TripsScreen from "./TripsScreen";
-import BlogScreen from "./blog/BlogScreen";
+
 import LoginScreen from "./LoginScreen";
 import ProfileScreen from "./ProfileScreen";
 import OpenWaterDiveScreen from "./courses/OpenWaterDiveScreen";
@@ -13,8 +13,7 @@ import AdvancedOpenWaterDiverCourseScreen from "./courses/AdvancedOpenWaterDiver
 import DiveMasterScreen from "./courses/DiveMasterScreen";
 import RescueDiverScreen from "./courses/RescueDiverScreen";
 import RegistrationScreen from "./RegistrationScreen";
-import Post from "./blog/Post"
-import NewPost from "./blog/NewPost"
+
 
 const PrivateRoute = (props) => {
   const [globalState, setGlobalStateg] = useContext(AppContext);
@@ -59,10 +58,7 @@ const App = () => {
           <LayoutRoute path="/" exact={true} component={MainScreen} />
           <LayoutRoute path="/trips" exact={true} component={TripsScreen} />
          
-          <LayoutRoute path="/blog/posts/:id" exact={true} component={Post} />
-          <LayoutRoute path="/blog/newposts" exact={true} component={NewPost} />
-          
-          <LayoutRoute path="/blog" exact={true} component={BlogScreen} />
+        
          
           <LayoutRoute
             path="/PADIOpenWaterCourse"
