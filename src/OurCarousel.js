@@ -13,7 +13,7 @@ const OurCarousel = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h1 class="display-5">
+            <h1 className="display-5">
               The BEST 5* PADI Dive Centre based in the Cloud!{" "}
             </h1>
             <p>Join us in the sky and in the sea</p>
@@ -28,7 +28,7 @@ const OurCarousel = () => {
           />
 
           <Carousel.Caption>
-            <h1 class="display-5">Transform your life today and dive in!</h1>
+            <h1 className="display-5">Transform your life today and dive in!</h1>
             <p>Start the first day of the rest of your life</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -41,7 +41,7 @@ const OurCarousel = () => {
           />
 
           <Carousel.Caption>
-            <h1 class="display-5">
+            <h1 className="display-5">
               Invite a friend to get certified and get a free dive on us!{" "}
             </h1>
             <p>Get your buddies involved and dive for free!</p>

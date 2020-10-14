@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import AppContext from "./AppContext";
 import { Redirect } from "react-router-dom";
-import NavBar from "./NavBar";
+
 import { validEmail, validPassword } from "./utils";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";

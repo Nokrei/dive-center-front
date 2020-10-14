@@ -1,36 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Jumbotron from "../Jumbotron";
 import Image from "react-bootstrap/Image";
 import CourseInfo from "../CourseInfo";
 const OpenWaterDive = () => {
-  /*
-  const [state, setState] = useState({
-    courseName: "",
-  });
 
-  useEffect(() => {
-    
-
-    
-    fetch("http://localhost:3002/products", {
-      method: "GET",
-    })
-      .then((response) => {
-        console.log("response", response);
-        return response.json();
-      })
-      .then((course) => {
-        
-        setState({
-          ...state,
-          courseName: course[0].courseName,
-          licence: course[0].licence,
-          price: course[0].price,
-        });
-      })
-      .catch((e) => console.log("e", e));
-  }, [state.courseName]);
-*/
   return (
     <div className="screen">
       <center>

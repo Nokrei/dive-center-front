@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import AppContext from '../AppContext';
 import { Redirect } from 'react-router-dom';
-import NavBar from '../NavBar';
+
 
 const NewPost = () => {
 

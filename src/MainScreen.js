@@ -8,10 +8,7 @@ import Jumbotron from "./Jumbotron";
 import Card from "./Card";
 
 const MainScreen = () => {
-  const [globalState, setGlobalState] = useContext(AppContext);
-  const url =
-    "https://gmail.us17.list-manage.com/subscribe/post?u=df873d65a5bf71549a102fdd0&amp;id=b2970616fa";
-  const [state, setState] = useState();
+  
 
   return (
     <div className="screen">
