@@ -32,7 +32,7 @@ const LayoutRoute = (props) => {
      // If the profile data is not loaded
     if (!state.profileLoaded) {
        // fetch the data from backend
-       fetch("http://localhost:3002/users/find", {
+       fetch(`${process.env.REACT_APP_API_URL}users/find`, {
          method: "POST",
          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
          body: {},

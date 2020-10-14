@@ -88,7 +88,7 @@ const RegistrationScreen = () => {
       formData.append("password", passwordField.value);
 
       // fetch function
-      fetch("http://localhost:3002/users/register", {
+      fetch(`${process.env.REACT_APP_API_URL}users/register`, {
         method: "POST",
         //headers: {"Content-Type": "multipart/form-data"},
         body: formData,

@@ -104,7 +104,7 @@ const ProfileScreen = () => {
       console.log("new password", formData, passwordField.value);
 
       // fetch function
-      fetch(`http://localhost:3002/users/update`, {
+      fetch(`${process.env.REACT_APP_API_URL}users/update`, {
         method: "POST",
         headers: {
           //"Content-Type": "multipart/form-data"
@@ -145,7 +145,7 @@ const ProfileScreen = () => {
     // If the profile data is not loaded
     if (!state.profileLoaded) {
       // fetch the data from backend
-      fetch("http://localhost:3002/users/find", {
+      fetch(`${process.env.REACT_APP_API_URL}users/find`, {
         method: "POST",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         body: {},

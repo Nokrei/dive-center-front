@@ -60,7 +60,7 @@ const LoginScreen = () => {
       formData.append("password", passwordField.value);
 
       // do fetch
-      fetch("http://localhost:3002/users/login", {
+      fetch(`${process.env.REACT_APP_API_URL}users/login`, {
         method: "POST",
         //headers: { "Content-Type": "application/json" },
         body: formData,

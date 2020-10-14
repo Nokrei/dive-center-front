@@ -79,7 +79,7 @@ const NewPost = () => {
             formData.append('body', bodyField.value);
 
             // fetch function
-            fetch("http://localhost:3002/posts/addpost",{
+            fetch(`${process.env.REACT_APP_API_URL}posts/addpost`,{
                 method: 'POST',
                 //headers: {"Content-Type": "multipart/form-data"},
                 body: formData

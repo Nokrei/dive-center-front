@@ -16,7 +16,7 @@ class BlogScreen extends React.Component {
   }
   
   async getPosts(){
-    const res = await axios.get("http://localhost:3002/posts/");
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}posts/`);
     this.setState({ posts: res.data});
   }
 

@@ -11,7 +11,7 @@ componentDidMount(){
 
 async getPost(){
     const res = await axios.get(
-        `http://localhost:3002/posts/${this.props.match.params.id}`
+        `${process.env.REACT_APP_API_URL}posts/${this.props.match.params.id}`
         );
 
         this.setState({post: res.data});
