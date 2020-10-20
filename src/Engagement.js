@@ -5,7 +5,7 @@ const Engagement = (props) => {
     <div className="container-fluid bg-dark" style={{padding: "0.5rem"}}>
       <div
         className="container"
-        style={{ display: "flex", "justify-content": "space-between" }}
+        style={{ display: "flex", "justifyContent": "space-between" }}
       >
         {props.children}
       </div>

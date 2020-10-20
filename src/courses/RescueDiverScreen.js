@@ -10,7 +10,7 @@ const RescueDiver = () => {
         <Image
           src="https://www.intothebluediving.com/wp-content/uploads/2019/12/1372601-605837-34.jpg"
           style={{
-            "max-height": "95vh",
+            "maxHeight": "95vh",
           }}
           className="d-block w-100"
         />

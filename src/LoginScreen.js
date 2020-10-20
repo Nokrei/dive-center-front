@@ -60,7 +60,7 @@ const LoginScreen = () => {
       formData.append("password", passwordField.value);
 
       // do fetch
-      fetch(`${process.env.REACT_APP_API_URL}users/login`, {
+      fetch(`http://localhost:3002/users/login`, {
         method: "POST",
         //headers: { "Content-Type": "application/json" },
         body: formData,
@@ -148,7 +148,7 @@ const LoginScreen = () => {
             ref={(comp) => (passwordField = comp)}
             className="field form-control"
             name="password"
-            autocomplete="off"
+            autoComplete="off"
             type="password"
           />
 
@@ -169,7 +169,7 @@ const LoginScreen = () => {
               Don't have an account?
               <br />
               <Link to="/registration">
-                <Button variant="contained" color="primary" style={{'margin-top':'1em'}}>
+                <Button variant="contained" color="primary" style={{'marginTop':'1em'}}>
                   Register
                 </Button>
               </Link>

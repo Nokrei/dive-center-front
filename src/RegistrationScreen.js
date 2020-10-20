@@ -88,7 +88,7 @@ const RegistrationScreen = () => {
       formData.append("password", passwordField.value);
 
       // fetch function
-      fetch(`${process.env.REACT_APP_API_URL}users/register`, {
+      fetch(`http://localhost:3002/users/register`, {
         method: "POST",
         //headers: {"Content-Type": "multipart/form-data"},
         body: formData,
@@ -177,7 +177,7 @@ const RegistrationScreen = () => {
             ref={(comp) => (passwordField = comp)}
             className="field form-control"
             name="password"
-            autocomplete="off"
+            autoComplete="off"
             type="password"
           />
           <br />

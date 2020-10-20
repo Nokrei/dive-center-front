@@ -9,7 +9,7 @@ const OpenWaterDive = () => {
       <center>
         <Image
           src="https://www.twofishdivers.com/wp-content/uploads/2019/11/EN-OpenWater-Blog-Post-1200x600.jpg"
-          style={{ "max-height": "95vh" }}
+          style={{ "maxHeight": "95vh" }}
           className="d-block w-100"
         />
         <Jumbotron trip="PADI Open Water Diver Course"></Jumbotron>

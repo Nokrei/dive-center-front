@@ -10,7 +10,7 @@ const DiveMaster = () => {
         <Image
           src="https://www.diversdownuae.com/wp-content/uploads/2018/04/Florian-Divemaster.jpg"
           style={{
-            "max-height": "95vh",
+            "maxHeight": "95vh",
           }}
           className="d-block w-100"
         />

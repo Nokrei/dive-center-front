@@ -5,7 +5,8 @@ import AppContext from "./AppContext";
 import LayoutRoute from "./LayoutRoute";
 import MainScreen from "./MainScreen";
 import TripsScreen from "./TripsScreen";
-
+import BlogScreen from './blog/BlogScreen';
+import NewPost from './blog/NewPost'
 import LoginScreen from "./LoginScreen";
 import ProfileScreen from "./ProfileScreen";
 import OpenWaterDiveScreen from "./courses/OpenWaterDiveScreen";
@@ -14,9 +15,8 @@ import DiveMasterScreen from "./courses/DiveMasterScreen";
 import RescueDiverScreen from "./courses/RescueDiverScreen";
 import RegistrationScreen from "./RegistrationScreen";
 
-
 const PrivateRoute = (props) => {
-  const [globalState, setGlobalStateg] = useContext(AppContext);
+  const [globalState, setGlobalState] = useContext(AppContext);
 
   // If user logged in, let them through
   if (globalState.loggedIn) {
@@ -33,6 +33,25 @@ const PrivateRoute = (props) => {
     return <Redirect to="/login" />;
   }
 };
+const AdminRoute = (props) => {
+  const [globalState, setGlobalState] = useContext(AppContext);
+
+  // If admin logged in, let them through
+  if (globalState.isAdmin) {
+    return (
+      <LayoutRoute
+        path={props.path}
+        exact={props.exact}
+        component={props.component}
+      />
+    );
+
+    // Otherwise, send them to /login
+  } else {
+    return <Redirect to="/login" />;
+  }
+};
+
 
 const App = () => {
   const [globalState, setGlobalState] = useState({
@@ -41,6 +60,7 @@ const App = () => {
     },
     loggedIn: localStorage.getItem("token") ? true : false,
     color: "red",
+    isAdmin: false
   });
 
   useEffect(() => {
@@ -57,9 +77,7 @@ const App = () => {
         <Switch>
           <LayoutRoute path="/" exact={true} component={MainScreen} />
           <LayoutRoute path="/trips" exact={true} component={TripsScreen} />
-         
-        
-         
+          
           <LayoutRoute
             path="/PADIOpenWaterCourse"
             exact={true}
@@ -80,7 +98,11 @@ const App = () => {
             exact={true}
             component={RescueDiverScreen}
           />
-
+          <LayoutRoute
+          path='/blogscreen'
+          exact={true}
+          component={BlogScreen}
+          />
           <LayoutRoute
             path="/registration"
             exact={true}
@@ -91,6 +113,11 @@ const App = () => {
             path="/profile"
             exact={true}
             component={ProfileScreen}
+          />
+           <AdminRoute
+            path="/newpost"
+            exact={true}
+            component={NewPost}
           />
         </Switch>
       </BrowserRouter>

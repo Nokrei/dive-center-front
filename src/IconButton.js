@@ -4,9 +4,9 @@ const IconButton = (props) => {
   return (
     <button
       className="btn btn-dark rounded-circle"
-      style={{ "margin-right": "10px", width: "42px", height: "42px" }}
+      style={{ "marginRight": "10px", width: "42px", height: "42px" }}
     >
-      <i class={`fa ${props.icon}`}></i>
+      <i className={`fa ${props.icon}`}></i>
     </button>
   );
 };

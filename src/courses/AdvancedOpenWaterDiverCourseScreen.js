@@ -9,7 +9,7 @@ const AdvancedOpenWaterDiverCourse = () => {
       <center>
         <Image
           src="https://scontent.ffjr1-6.fna.fbcdn.net/v/t1.0-9/66588155_10157205129417988_2208041746275762176_o.jpg?_nc_cat=104&_nc_sid=8024bb&_nc_ohc=gmuH0sj_xDwAX8tCqrh&_nc_ht=scontent.ffjr1-6.fna&oh=0d5d97660896a9e39ededf4b422d0989&oe=5FAC9833"
-          style={{ "max-height": "95vh" }}
+          style={{ "maxHeight": "95vh" }}
           className="d-block w-100"
         />
         <Jumbotron trip="PADI Advanced Open Water Diver Course"></Jumbotron>
