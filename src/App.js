@@ -60,7 +60,8 @@ const App = () => {
     },
     loggedIn: localStorage.getItem("token") ? true : false,
     color: "red",
-    isAdmin: false
+    isAdmin: false,
+    id: 0
   });
 
   useEffect(() => {

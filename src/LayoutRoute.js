@@ -20,56 +20,6 @@ const LayoutRoute = (props) => {
   }));
   const classes = useStyles();
 
-  const [state, setState] = useState({
-    profileLoaded: false,
-    errors: [],
-    success: false,
-    preloader: false,
-    isAdmin: false,
-  });
-  useEffect(() => {
-    
-    if (state.id === "5f84531694093369d408402b") {
-      setGlobalState({
-        ...globalState,
-        isAdmin: true,
-      });
-    }
-      // fetch the data from backend
-      fetch("http://localhost:3002/users/find", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        body: {},
-      })
-        .then((response) => {
-          console.log("response", response);
-          return response.json();
-        })
-        .then((profile) => {
-          // Once data is loaded, change profileLoaded to true and
-          // change the state to populate the form fields
-          setState({
-            ...state,
-            profileLoaded: true,
-            id: profile[0]._id,
-          });
-        }).then((check)=>{
-          if (state.id === "5f84531694093369d408402b") {
-            setGlobalState({
-              ...globalState,
-              isAdmin: true,
-            });
-          }
-        }
-          
-        )
-        .catch((e) => console.log("e", e));
-    
-    
-  }, [state.profileLoaded]);
-  console.log(globalState.isAdmin);
-  console.log(state.id);
-
   const footerStyle = {
     gridRowStart: "2",
     gridRowEnd: "3",

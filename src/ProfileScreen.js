@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, useContext } from "react";
+import AppContext from "./AppContext";
 import Button from '@material-ui/core/Button';
 import { validEmail, validPassword } from "./utils";
 import { makeStyles } from "@material-ui/core/styles";
@@ -7,14 +7,14 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 
 const ProfileScreen = () => {
   // Function for material UI
-  const useStyles = makeStyles((theme) => ({
+ /*  const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
       "& > * + *": {
         marginLeft: theme.spacing(2),
       },
     },
-  }));
+  })); */
 
   // Array of diving facts
   const divingFacts = [
@@ -31,7 +31,7 @@ const ProfileScreen = () => {
   ];
   // Function to randomly generate diving fact number
   const factNumber = Math.floor(Math.random() * 10);
-
+  const [globalState, setGlobalState] = useContext(AppContext);
   const [state, setState] = useState({
     profileLoaded: false,
     errors: [],
@@ -164,10 +164,13 @@ const ProfileScreen = () => {
             lastName: profile[0].lastName,
             email: profile[0].email,
             photoURL: profile[0].photoURL,
+            userID: profile[0]._id
           });
+          
         })
         .catch((e) => console.log("e", e));
     }
+    
   }, [state.profileLoaded]);
 
   return (
