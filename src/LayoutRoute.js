@@ -1,24 +1,19 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import AppContext from "./AppContext";
 import { Route, Link } from "react-router-dom";
 import NavBar from "./NavBar";
+import ToTop from './ToTop';
 import Engagement from "./Engagement";
 import IconButton from "./IconButton";
 import SocialMediaLinks from "./SocialMediaLinks";
-import { makeStyles } from "@material-ui/core/styles";
+
 import Button from "@material-ui/core/Button";
 
 const LayoutRoute = (props) => {
   const [globalState, setGlobalState] = useContext(AppContext);
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      "& > *": {
-        margin: theme.spacing(1),
-      },
-    },
-  }));
-  const classes = useStyles();
+  
+  
 
   const footerStyle = {
     gridRowStart: "2",
@@ -30,12 +25,15 @@ const LayoutRoute = (props) => {
     setGlobalState({
       ...globalState,
       loggedIn: false,
+      isAdmin: false
     });
   };
 
   return (
     <React.Fragment>
+      
       <div style={{ position: "relative" }}>
+      <div id='top'/>
         <NavBar
           brand="Yellow Lions Dive Centre"
           links={[
@@ -43,6 +41,7 @@ const LayoutRoute = (props) => {
             { label: "Blog", path: "blogscreen" },
           ]}
         >
+          <ToTop/>
           {" "}
           {!globalState.loggedIn && (
             <Link to="/login">

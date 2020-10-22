@@ -3,19 +3,10 @@ import AppContext from "./AppContext";
 import { Redirect } from "react-router-dom";
 
 import { validEmail, validPassword } from "./utils";
-import { makeStyles } from "@material-ui/core/styles";
+
 import Button from "@material-ui/core/Button";
 
 const RegistrationScreen = () => {
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      "& > *": {
-        margin: theme.spacing(1),
-      },
-    },
-  }));
-  const classes = useStyles();
-
   const [globalState, setGlobalState] = useContext(AppContext);
 
   const [state, setState] = useState({

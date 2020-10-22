@@ -9,8 +9,9 @@ const BlogScreen = () => {
     posts: [],
     userIn: false,
     userID: "",
+    userName: "",
+    userAvatar: "",
   });
-  const [adminCheck, setAdminCheck] = useState(false);
 
   useEffect(() => {
     // If the profile data is not loaded
@@ -32,16 +33,24 @@ const BlogScreen = () => {
             ...state,
             userIn: true,
             userID: profile[0]._id,
+            userName: profile[0].firstName.toUpperCase(),
+            userAvatar: profile[0].photoURL,
           });
-          if (state.userID === "5f84531694093369d408402b") {
-            setAdminCheck(true);
-          }
         })
         .catch((e) => console.log("e", e));
     }
   }, [state.userIn]);
-  console.log(state);
-  console.log(adminCheck);
+  console.log(state.userName);
+  useEffect(() => {
+    if (state.userID === "5f84531694093369d408402b") {
+      setGlobalState({
+        ...globalState,
+        isAdmin: true,
+        userName: state.userName,
+        userAvatar: state.userAvatar
+      });
+    }
+  }, [state.userID]);
 
   useEffect(() => {
     fetch("http://localhost:3002/posts", {
@@ -60,11 +69,11 @@ const BlogScreen = () => {
 
   return (
     <div>
-      {globalState.loggedIn && state.userID === "5f84531694093369d408402b" ? (
+      {globalState.isAdmin && (
         <Link to="./newpost">
           <button className="btn btn-primary">New Post</button>
         </Link>
-      ) : null}
+      )}
 
       {state.posts.map((post) => {
         return (
@@ -72,9 +81,12 @@ const BlogScreen = () => {
             title={post.title}
             body={post.body}
             date={post.createdAt.slice(0, 10)}
+            name={post.userName}
+            avatar={post.userAvatar}
           />
         );
       })}
+        
     </div>
   );
 };

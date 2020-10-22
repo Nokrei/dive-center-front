@@ -15,7 +15,7 @@ const NewPost = () => {
   const classes = useStyles();
 
   const [globalState, setGlobalState] = useContext(AppContext);
-
+  const [added, setAdded] = useState(false)
   const formData = new FormData();
 
   // Declare variables for React
@@ -26,6 +26,8 @@ const NewPost = () => {
   const addNewPost = () => {
     formData.append("title", titleField.value);
     formData.append("body", contentField.value);
+    formData.append('userName', globalState.userName);
+    formData.append('userAvatar', globalState.userAvatar);
     // fetch function
     fetch(`http://localhost:3002/posts/newpost`, {
         method: "POST",
@@ -38,7 +40,7 @@ const NewPost = () => {
         // If Promise was successful
         .then((response) => {
           console.log(response);
-  })}
+  }).then(setAdded(true))}
 
   return (
     <div className="screen">
@@ -68,6 +70,7 @@ const NewPost = () => {
           rows='20'
         />
         <br/>
+        {added && <p>Post added</p>}
         <Button
           variant="contained"
           color="primary"
@@ -76,6 +79,8 @@ const NewPost = () => {
         >
           Add Post
         </Button>
+        <br/>
+        
       </div>
     </div>
   );

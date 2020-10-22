@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Redirect, Route, Switch, Link } from "react-router-dom";
 import AppContext from "./AppContext";
 import LayoutRoute from "./LayoutRoute";
+
 import MainScreen from "./MainScreen";
 import TripsScreen from "./TripsScreen";
 import BlogScreen from './blog/BlogScreen';
